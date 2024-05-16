@@ -1,14 +1,16 @@
 <body>
 
 <nav>
-  <ul>
+  <ul class="nav_name">
     <li><strong><%= link_to "Biblioteca", root_path %></strong></li>
   </ul>
-  <ul>
+  <ul class="right_links_nav">
     <% if session[:user_id].nil? %>
       <li><a><%= link_to "S'inscrire", register_path %></a></li>
       <li><a><%= link_to "Se connecter", login_path %></a></li>
     <% else %>
+      <li><a><%= link_to "Emprunts", borrows_path %></a></li>
+      <li><a><%= link_to "Mes emprunts", borrows_path %></a></li>
       <li><a><%= link_to "Se déconnecter", logout_path, data: { turbo_method: :delete } %></a></li>
     <% end %>
   </ul>

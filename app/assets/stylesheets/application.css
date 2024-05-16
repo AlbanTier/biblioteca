@@ -13,3 +13,51 @@
  *= require_tree .
  *= require_self
  */
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* Style pour chaque livre */
+.book_card ul li {
+    width: calc(32% - 20px); /* Trois livres par ligne */
+    float: left;
+    margin: 10px;
+    padding: 10px;
+    background-color: #f9f9f9; /* Fond clair */
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+/* Style pour le titre */
+.book_card ul li div.title {
+    font-weight: bold;
+    word-break: initial;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+/* Style pour le nom de l'auteur et l'année de publication */
+.book_card  ul li div.author,
+.book_card  ul li div.publish-year {
+    color: #666;
+    margin-top: 5px;
+}
+
+nav {
+    background-color: #F1F1F1;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-bottom: solid #99C803;
+    filter: drop-shadow(0 20px 13px rgb(0 0 0 / 0.03)) drop-shadow(0 8px 5px rgb(0 0 0 / 0.08));
+}
+
+.button_book {
+    width: 10%;
+}
+
+.book_info {
+    padding: 15px;
+}
+

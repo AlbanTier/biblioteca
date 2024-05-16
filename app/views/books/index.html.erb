@@ -1,9 +1,14 @@
 <h1>Liste des livres</h1>
 <p>Bienvenue à la biblioteca💃</p>
 <% @books.each do |book| %>
-  <ul>
-    <li><%= book.title %></li>
-    <li><%= book.author %></li>
-    <li><%= book.publish_year %></li>
-  </ul>
+  <div class="book_card">
+    <ul>
+      <li>
+        <div class="title"><%= link_to book.title, book %></div>
+        <div class="author"><%= book.author %></div>
+        <div class="publish-year"><%= book.publish_year %></div>
+      </li>
+    </ul>
+  </div>
 <% end %>
+
