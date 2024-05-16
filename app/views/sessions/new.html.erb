@@ -1,21 +1,14 @@
-<h1>Login</h1>
-
-<% if flash[:error].present? %>
-  <p class="error"><%= flash[:error] %></p>
-<% end %>
-
-<%= form_with url: login_path, method: :post do |form| %>
-  <div class="field">
-    <%= form.label :email %>
-    <%= form.email_field :email %>
-  </div>
-
-  <div class="field">
-    <%= form.label :password %>
-    <%= form.password_field :password %>
-  </div>
-
-  <div class="field">
-    <%= form.submit 'login' %>
+<% if flash[:alert] %>
+  <div class="alert alert-danger">
+    <%= flash.now[:alert] %>
+    <% puts 'oui' %>
   </div>
 <% end %>
+
+
+<div class="login_form">
+  <h2>Connexion</h2>
+  <div class="form_render">
+    <%= render "form", session: @session %>
+  </div>
+</div>

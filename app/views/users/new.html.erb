@@ -1,5 +1,16 @@
-<div class="mx-auto md:w-2/3 w-full">
-  <h1 class="font-bold text-4xl">Créer utilisateur</h1>
-
-  <%= render "form", user: @user %>
+<div class="register_form">
+    <% if @user.errors.any? %>
+      <div class="error_explanation">
+        <h4><%= pluralize(@user.errors.count, "erreur") %> : L'inscription n'as pas pu aboutir.</h4>
+        <ul>
+          <% @user.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+  <h2>Inscription</h2>
+  <div class="form_render">
+    <%= render "form", user: @user %>
+  </div>
 </div>

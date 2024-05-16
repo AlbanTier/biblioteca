@@ -1,0 +1,15 @@
+fr:
+  activerecord:
+    errors:
+      models:
+        user:
+          attributes:
+            email:
+              blank: "ne peut pas être vide"
+              invalid: "n'est pas valide"
+            password:
+              confirmation: "ne correspond pas au mot de passe"
+              blank: "ne peut pas être vide"
+            password_confirmation:
+              confirmation: "ne correspond pas au mot de passe entré"
+              blank: "ne peut pas être vide"

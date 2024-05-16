@@ -1,0 +1,33 @@
+<h3 class="user_connected">Emprunts de <%= current_user.email %></h3>
+
+<div class="borrows-container">
+  <div class="still-borrow">
+    <h4 style="color: orange">Emprunts en cours :</h4>
+    <% if @still_borrow.any? %>
+      <ul>
+        <% @still_borrow.each do |borrow| %>
+          <li>
+            <%= borrow.book.title %> (Emprunté le <%= borrow.started_at.strftime('%d/%m/%Y') %>)
+          </li>
+        <% end %>
+      </ul>
+    <% else %>
+      <p>Aucun emprunt en cours.</p>
+    <% end %>
+  </div>
+
+  <div class="borrows-history">
+    <h4 style="color: forestgreen">Emprunts terminés :</h4>
+    <% if @borrows_history.any? %>
+      <ul>
+        <% @borrows_history.each do |borrow| %>
+          <li>
+            <%= borrow.book.title %> (Emprunté le <%= borrow.started_at.strftime('%d/%m/%Y') %>, Rendu le <%= borrow.ended_at.strftime('%d/%m/%Y') %>)
+          </li>
+        <% end %>
+      </ul>
+    <% else %>
+      <p>Aucun emprunt terminé.</p>
+    <% end %>
+  </div>
+</div>
