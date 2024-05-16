@@ -1,0 +1,20 @@
+<% flash.each do |type, msg| %>
+  <div>
+    <%= msg %>
+  </div>
+<% end %>
+
+<h1><%= @book.title %></h1>
+<p>Author: <%= @book.author %></p>
+<p>Publish date: <%= @book.publish_year %></p>
+<% if logged_in? && current_user %>
+<% if !@book.available? && !@can_end_borrow%>
+  <% borrow = current_user.borrows.where(book_id: @book.id).order(started_at: :desc).first %>
+  <%= button_to "Rendre", borrow_path(borrow), method: :delete, data: { confirm: "Êtes-vous sûr de vouloir rendre ce livre ?" }, class: "btn btn-danger me-2" %>
+<% else if @book.available? %>
+      <%= button_to "Emprunter", borrows_path(book_id: @book.id), method: :post, class: "btn btn-primary me-2" %>
+<% else %>
+  <p>Le livre n'est pas disponible actuellement.</p>
+<% end %>
+    <% end %>
+<% end %>

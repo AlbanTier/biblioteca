@@ -1,0 +1,9 @@
+<h1>Liste des livres</h1>
+<p>Bienvenue à la biblioteca💃</p>
+<% @books.each do |book| %>
+  <ul>
+    <li><%= book.title %></li>
+    <li><%= book.author %></li>
+    <li><%= book.publish_year %></li>
+  </ul>
+<% end %>

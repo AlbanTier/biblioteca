@@ -1,0 +1,21 @@
+<h1>Login</h1>
+
+<% if flash[:error].present? %>
+  <p class="error"><%= flash[:error] %></p>
+<% end %>
+
+<%= form_with url: login_path, method: :post do |form| %>
+  <div class="field">
+    <%= form.label :email %>
+    <%= form.email_field :email %>
+  </div>
+
+  <div class="field">
+    <%= form.label :password %>
+    <%= form.password_field :password %>
+  </div>
+
+  <div class="field">
+    <%= form.submit 'login' %>
+  </div>
+<% end %>
