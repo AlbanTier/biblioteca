@@ -1,17 +1,28 @@
 <%= form_with(model: user) do |form| %>
-
   <div>
     <%= form.label :email, 'Adresse mail :', style: "display: block" %>
     <%= form.text_field :email %>
   </div>
+
   <div>
     <%= form.label :password, 'Mot de passe :', style: "display: block" %>
     <%= form.password_field :password %>
+    <% if user.errors[:password].any? %>
+      <div class="invalid-feedback">
+        <%= user.errors.full_messages_for(:password).first %>
+      </div>
+    <% else %>
+      <small id="passwordHelpBlock" class="form-text text-muted">
+        Le mot de passe doit comporter au moins 6 caractères.
+      </small>
+    <% end %>
   </div>
+
   <div>
     <%= form.label :password_confirmation, 'Confirmation :', style: "display: block" %>
     <%= form.password_field :password_confirmation %>
   </div>
+
   <div>
     <%= form.submit "Valider" %>
   </div>
