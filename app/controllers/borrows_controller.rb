@@ -1,5 +1,9 @@
 class BorrowsController < ApplicationController
 
+  def index
+    @borrows_history = Borrow.includes(:user, :book).where.not(ended_at: nil)
+    @still_borrow = Borrow.includes(:user, :book).where(ended_at: nil)
+  end
   def create
     @book = Book.find(params[:book_id])
     if check_availability(params[:book_id])

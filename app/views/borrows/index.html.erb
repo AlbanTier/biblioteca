@@ -1,0 +1,17 @@
+<h1>Emprunts en cours</h1>
+<% @still_borrow.each do |borrow_active| %>
+  <p>
+    <strong>Utilisateur:</strong> <%= borrow_active.user.email %><br>
+    <strong>Livre:</strong> <%= borrow_active.book.title %><br>
+    <strong>Date de début:</strong> <%= borrow_active.started_at %><br>
+  </p>
+<% end %>
+<h1>Emprunts terminés</h1>
+<% @borrows_history.each do |borrow| %>
+  <p>
+    <strong>Utilisateur:</strong> <%= borrow.user.email %><br>
+    <strong>Livre:</strong> <%= borrow.book.title %><br>
+    <strong>Date de début:</strong> <%= borrow.started_at %><br>
+    <strong>Date de fin:</strong> <%= borrow.ended_at %><br>
+  </p>
+<% end %>

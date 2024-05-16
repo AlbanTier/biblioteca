@@ -6,7 +6,9 @@ class BooksController < ApplicationController
   def show
     @book = Book.find(params[:id])
     @borrow_id = Borrow.find_by(book_id: @book.id, ended_at: nil)
-    @can_end_borrow = check_if_user_borrow(@book.id, current_user.id)
+    if logged_in?
+      @can_end_borrow = check_if_user_borrow(@book.id, current_user.id)
+    end
   end
 
 
