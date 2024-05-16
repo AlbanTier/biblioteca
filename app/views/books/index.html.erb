@@ -1,5 +1,12 @@
-<h1>Liste des livres</h1>
-<p>Bienvenue à la biblioteca💃</p>
+<div class="search_bar">
+  <%= form_tag books_path, method: :get do %>
+    <fieldset role="group">
+      <%= text_field_tag :search, params[:search], placeholder: "Rechercher un livre" %>
+      <%= submit_tag "Rechercher" %>
+    </fieldset>
+  <% end %>
+</div>
+
 <% @books.each do |book| %>
   <div class="book_card">
     <ul>

@@ -18,18 +18,16 @@ html {
     scroll-behavior: smooth;
 }
 
-/* Style pour chaque livre */
 .book_card ul li {
     width: calc(32% - 20px); /* Trois livres par ligne */
     float: left;
     margin: 10px;
     padding: 10px;
-    background-color: #f9f9f9; /* Fond clair */
+    background-color: #f9f9f9;
     border-radius: 5px;
     box-sizing: border-box;
 }
 
-/* Style pour le titre */
 .book_card ul li div.title {
     font-weight: bold;
     word-break: initial;
@@ -38,7 +36,6 @@ html {
     white-space: nowrap;
 }
 
-/* Style pour le nom de l'auteur et l'année de publication */
 .book_card  ul li div.author,
 .book_card  ul li div.publish-year {
     color: #666;
@@ -50,14 +47,83 @@ nav {
     padding-left: 10px;
     padding-right: 10px;
     border-bottom: solid #99C803;
-    filter: drop-shadow(0 20px 13px rgb(0 0 0 / 0.03)) drop-shadow(0 8px 5px rgb(0 0 0 / 0.08));
+    filter: drop-shadow(0 5px 8px rgb(0 0 0 / 0.03)) drop-shadow(0 4px 5px rgb(0 0 0 / 0.08));
 }
 
 .button_book {
-    width: 10%;
+    width: 12%;
 }
 
 .book_info {
     padding: 15px;
+}
+
+.borrows-container {
+    display: flex;
+    justify-content: center;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.still-borrow, .borrows-history {
+    flex: 1;
+    list-style-type: none;
+    text-align: center;
+}
+
+.still-borrow li, .borrows-history li {
+    list-style-type: none;
+    border: solid 0.01em;
+    border-radius: 5px;
+}
+
+.user_connected {
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 15px;
+}
+
+.p_list {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.search_bar {
+    margin: 20px;
+}
+.register_form h2 {
+    margin: 15px;
+    text-align: center;
+}
+
+.login_form h2 {
+    margin: 15px;
+    text-align: center;
+}
+
+.form_render {
+    margin: 0 auto;
+    justify-content: center;
+    width: 800px;
+}
+
+.error_explanation ul li {
+    list-style-type: circle;
+}
+
+.error_explanation {
+
+    justify-content: center;
+    align-items: center;
+    margin: 10px auto;
+    width: 500px;
+    border: solid #ef4e44;
+    border-radius: 10px;
+    background-color: #f3645d;
+}
+
+.error_explanation h4 {
+    text-align: center;
+    color: white;
 }
 

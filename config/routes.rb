@@ -11,8 +11,11 @@ Rails.application.routes.draw do
 
   resources :users, except: [:new]
   resources :books
-  resources :borrows
+  resources :borrows, except: [:show]
 
+  resources :borrows do
+    get 'user_borrows', on: :collection
+  end
 
 
   # get 'borrows/create'

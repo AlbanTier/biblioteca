@@ -10,7 +10,7 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.save
-        format.html { redirect_to books_path, notice: "Utilisateur crée" }
+        format.html { redirect_to books_path }
         session[:user_id] = @user.id
       else
         format.html { render :new, status: :unprocessable_entity }

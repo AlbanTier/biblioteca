@@ -1,0 +1,19 @@
+<% if flash[:error].present? %>
+  <p class="error"><%= flash[:error] %></p>
+<% end %>
+
+<%= form_with url: login_path, method: :post do |form| %>
+  <div class="field">
+    <%= form.label :email, "Adresse mail :"%>
+    <%= form.email_field :email %>
+  </div>
+
+  <div class="field">
+    <%= form.label :password, 'Mot de passe :', style: "display: block" %>
+    <%= form.password_field :password %>
+  </div>
+
+  <div class="field">
+    <%= form.submit 'Connexion' %>
+  </div>
+<% end %>
